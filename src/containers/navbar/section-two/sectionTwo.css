@@ -1,0 +1,17 @@
+.section-two-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    flex-direction: column;
+}
+
+.section-two-content {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
