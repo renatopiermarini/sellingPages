@@ -1,7 +1,6 @@
-import React from "react";
-import "./sectionOne.css";
-import IPhone from "../../../assets/iphone.png";
-import video from "../../../assets/video.mp4";
+import './sectionOne.css';
+import IPhone from 'assets/iphone.png';
+import video from 'assets/video.mp4';
 
 export const SectionOne = () => {
   return (
