@@ -1,33 +1,33 @@
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
-import path from 'path';
-import { readdirSync } from 'fs';
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import path from 'path'
+import { readdirSync } from 'fs'
+import eslint from 'vite-plugin-eslint'
 
-const absolutePathAliases = {};
+const absolutePathAliases = {}
 // Root resources folder
-const srcPath = path.resolve('./src/');
+const srcPath = path.resolve('./src/')
 // Ajust the regex here to include .vue, .js, .jsx, etc.. files from the resources/ folder
 const srcRootContent = readdirSync(srcPath, { withFileTypes: true }).map(
   (dirent) => dirent.name.replace(/(\.jsx){1}(x?)/, '')
-);
+)
 
 srcRootContent.forEach((directory) => {
-  absolutePathAliases[directory] = path.join(srcPath, directory);
-});
+  absolutePathAliases[directory] = path.join(srcPath, directory)
+})
 
 export default defineConfig({
-  plugins: [react()],
-
+  plugins: [react(), eslint()],
   root: './',
   resolve: {
     alias: {
-      ...absolutePathAliases,
-    },
+      ...absolutePathAliases
+    }
   },
 
   build: {
     rollupOptions: {
-      input: '/index.html',
-    },
-  },
-});
+      input: '/index.html'
+    }
+  }
+})
