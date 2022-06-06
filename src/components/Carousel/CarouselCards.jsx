@@ -5,9 +5,10 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 
 const CarouselCards = () => {
   return (
-    <Carousel showStatus={false} className="cards-container">
+    <Carousel showThumbs={false} showStatus={false} className="cards-container">
       {howWeWork.map((item) => (
         <Card
+          key={item.title}
           title={item.title}
           description={item.description}
           number={item.number}
