@@ -18,6 +18,7 @@ srcRootContent.forEach((directory) => {
 
 export default defineConfig({
   plugins: [react(), eslint()],
+
   root: './',
   resolve: {
     alias: {
